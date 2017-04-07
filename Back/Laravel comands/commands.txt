@@ -1,0 +1,5 @@
+Criar um nono projeto Laravel 
+-- composer create-project laravel/laravel . --prefer-dist
+
+Iniciar o servidor
+-- php artisan serve

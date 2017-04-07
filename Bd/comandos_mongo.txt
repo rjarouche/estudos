@@ -1,0 +1,48 @@
+Criar novo banco
+--use newDB
+
+Insere e cria uma collection
+--db.newCollection.insertOne({x:1});
+
+Trazer dados
+-- db["newCollection"].find()
+-- db.getCollection("newCollection").find();
+
+mostrar lista de collections
+-- show collections
+
+habilitar modo de autenticação
+--
+use admin; 
+db.createUser(
+  {
+    user: "mongo",
+    pwd: "mongo",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, 
+             { role: "readWrite", db: "newDB" },  
+   ] 
+  }
+);
+
+
+use newDB; 
+db.createUser(
+  {
+    user: "mongo",
+    pwd: "mongo",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, 
+             { role: "readWrite", db: "newDB" },  
+   ] 
+  }
+);
+
+//colocar o use como banco de usuário, cada banco tem seus usuários
+
+no shell: sudo mongod --auth;
+--
+
+autenticar
+--use newDB
+--db.auth("mongo", "mongo" );
+--mongo -u mongo -p mongo 123.45.67.89/cool_db remoto;
+

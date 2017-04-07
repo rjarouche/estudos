@@ -1,0 +1,7 @@
+-Procurar arquivos
+sudo find / -name subimetext 2> /dev/null
+-Criar link
+sudo ln -s /original /link 
+-colocar comandos globais, pasta
+/usr/bin/
+
